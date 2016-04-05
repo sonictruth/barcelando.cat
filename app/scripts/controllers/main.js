@@ -31,7 +31,7 @@ angular.module('barcelandoApp')
 			params = params || { limit: limit, fields: 'full_picture,object_id,type,caption,message,name,link'} ;
 			$scope.loading = true;
 			morelink = null;
-			facebookService.callApi("/Barcelandoculturecrawl/feed/", params).then(function(response) {
+			facebookService.callApi("/Barcelonapor4euros/feed/", params).then(function(response) {
 				if ( response.paging && response.paging.next){
 					morelink = response.paging.next;
 				}
