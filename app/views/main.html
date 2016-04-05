@@ -1,0 +1,88 @@
+<div class="event">
+    <div>
+        <h6></h6>
+        <div class="imgbox"></div> <pre ng-if="e.description">{{e.description}}</pre> </div>
+    </div>
+
+    <div class="row" ng-if="events">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"><center>
+            <div ng-repeat="e in events track by $index">
+                
+                   
+                    <!--- link -->
+                    <div ng-if="e.type == 'link'" ng-model="$e">
+
+                        <h1>{{e.message}} </h1>
+                        <h3>{{e.name}} </h3>
+
+                            <img class="img-rounded img-responsive fullwidthimg" src="{{e.full_picture}}"> 
+                     <br>
+                        <button ng-click="openLink(e.link)" type="button" class="btn btn-default btn-lg moreinfo">
+                          <span class="fa fa-arrow-circle-right " ></span> More Info
+                      </button>
+                      
+                  
+                      
+                    </div>
+<!--- photo -->
+                    <div ng-if="e.type == 'photo'" ng-model="$e" >
+
+                        <h1>{{e.message}} </h1>
+                        <h3>{{e.name}} </h3>
+                      
+                      <img class="img-rounded img-responsive fullwidthimg" src="{{e.full_picture}}"> 
+<br>
+                        <button ng-click="openLink(e.link)" type="button" class="btn btn-default btn-lg moreinfo">
+                          <span class="fa fa-arrow-circle-right " ></span> More Info
+                      </button>
+                     
+                      
+                      
+                    </div>
+
+<!--- event -->
+                        <div ng-if="e.type == 'event'" ng-model="$e" ng-controller="EventCtrl">
+
+                        <h1>{{e.message}} </h1>
+                        <h3>{{e.name}} </h3>
+
+
+                      <img class="img-rounded img-responsive fullwidthimg" src="{{edetails.cover.source}}"> 
+                      
+                        <br>
+                   
+
+                        <div ng-show="edetails">
+                            {{edetails.start_time}} <br>
+                            {{edetails.place.name}}, {{edetails.place.location.street}} <br>
+
+  <div ng-show="edetails.place.location.latitude"><br>
+<a target="_blank" href="https://www.google.com/maps/place/{{edetails.place.location.latitude}},{{edetails.place.location.longitude}}/"><img class="img-rounded img-responsive " src="http://maps.googleapis.com/maps/api/staticmap?center={{edetails.place.location.latitude}},{{edetails.place.location.longitude}}&zoom=15&scale=false&size=600x200&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:red%7Clabel:0%7C{{edetails.place.location.latitude}},{{edetails.place.location.longitude}}" alt="Map"></a><br>
+</div>
+
+                        </div>
+
+     <button ng-click="openLink(e.link)" type="button" class="btn btn-default btn-lg moreinfo">
+                          <span class="fa fa-arrow-circle-right " ></span> More Info
+                      </button>
+
+                      
+                    </div>
+
+<hr class="separator">
+                
+              </div>  </center>
+
+              <div ng-if="loading">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+
+            <div infinite-scroll="loadMoreInfinite()" infinite-scroll-distance="3"></div>
+
+
+
+        </div>
+    </div>

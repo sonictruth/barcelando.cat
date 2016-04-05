@@ -1,0 +1,10 @@
+
+git remote add dist https://github.com/aaalexandru/aaalexandru.github.io.git
+git subtree add —-prefix=dist/ dist master
+
+git remote
+
+git add . --all
+git commit -m 'c'
+git push origin master
+git subtree push --prefix=distr/ dist master
