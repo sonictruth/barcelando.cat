@@ -1,7 +1,8 @@
-# barcelando.cat 2015
+# barcelando.cat 
 
 Angular.js app that pulls data from a facebook page newsfeed. 
 http://sonictruth.github.io/barcelando.cat/
+The app was made in 2015.
 
 ## Build & development
 
