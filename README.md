@@ -1,7 +1,6 @@
-# barcelando.cat
+# barcelando.cat 2015
 
-Angular.js app that pulls data from a facebook page newsfeed.
-
+Angular.js app that pulls data from a facebook page newsfeed. 
 http://sonictruth.github.io/barcelando.cat/
 
 ## Build & development
